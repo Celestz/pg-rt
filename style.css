@@ -1,0 +1,57 @@
+body {
+  font-size: 12px;
+}
+#moving-box {
+  width: 300px;
+  height: 120px;
+  background-color: skyblue;
+  border: 2px solid blueviolet;
+  border-radius: 5px;
+  box-shadow: 0px 8px 6px -6px purple;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+
+  /* layer popup */
+  z-index: 10;
+
+  /* 화면 정중앙 위치*/
+  position: fixed; /* mouse dragging => position: fixed| absoltue*/
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  /* resizable */
+  resize: both;
+  overflow: auto;
+  /*padding-bottom: 1px; 처음부터 scroll이 보이면 padding 으로 조정함*/
+}
+#moving-box .header {
+  height: 30px;
+  background-color: #eee;
+
+  /* 글자 정가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#moving-box .footer {
+  height: 16px;
+  background-color: aquamarine;
+}
+
+/* drag 영역 표시 */
+.grab-zone {
+  cursor: grab;
+}
+.grab-zone:active {
+  cursor: grabbing;
+}
+/* dragging 표시 */
+#moving-box.dragging {
+  opacity: 0.5;
+  border: 10px dotted salmon;
+}
